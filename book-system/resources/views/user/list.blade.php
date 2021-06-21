@@ -19,23 +19,19 @@
         </div>
 
         <!-- Products -->
-
+        @foreach($books as $book)
         <section class="tiles">
           <article class="style">
             <span class="image">
               <img style="width: 100px" src="{{$book->url_img}}" alt="" />
             </span>
             <a href="/detail/book/{{$book->id}}">
-              <h2></h2>
-
-              <p> <strong></strong></p>
-
-
+              <h2>{{$book->title}}</h2>
+              <p> <strong>{{$book->price}}</strong></p>
             </a>
           </article>
-
         </section>
-
+        @endforeach
       </div>
     </div>
   </div>
