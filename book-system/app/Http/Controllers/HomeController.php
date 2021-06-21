@@ -17,5 +17,15 @@ class HomeController extends Controller
        // dd(Session::all());
         return redirect()->back();
     }
+    public function getBook()
+    {
+        $books = Book::Orderby('id','ASC')->get();
+        return view('user.list',compact('books'));
+    }
+    public function getBookById($id)
+    {
+        $books = Book::where('id',$id)->first();
+        return view('user.detail-book',compact('books'));
+    }
     
 }
